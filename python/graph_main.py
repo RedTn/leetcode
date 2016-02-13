@@ -1,5 +1,7 @@
 import graph
 from dijsktra import Dijsktra_path
+from dfs import DepthFirstSearch
+from bfs import BreadthFirstSearch
 
 if __name__ == '__main__':
 
@@ -46,6 +48,30 @@ if __name__ == '__main__':
     g2.add_edge('d', 'g', 12)
     g2.add_edge('e', 'f', 2)
     
-    Dijsktra_path(g, g.vert_dict['a'])
-    print("---")
-    Dijsktra_path(g2, g2.vert_dict['a'])
+    #Dijsktra_path(g, g.vert_dict['a'])
+    #print("---")
+    #Dijsktra_path(g2, g2.vert_dict['a'])
+
+    search = graph.Graph()
+
+    search.add_vertex('a')
+    search.add_vertex('b')
+    search.add_vertex('c')
+    search.add_vertex('d')
+    search.add_vertex('e')
+    search.add_vertex('f')
+    search.add_vertex('g')
+    search.add_vertex('h')
+
+    search.add_edge('a', 'b')
+    search.add_edge('a', 'd')
+    search.add_edge('a', 'g')
+    search.add_edge('b', 'e')
+    search.add_edge('b', 'f')
+    search.add_edge('c', 'f')
+    search.add_edge('c', 'h')
+    search.add_edge('d', 'f')
+    search.add_edge('e', 'g')
+
+    #DepthFirstSearch(search, search.vert_dict['a'])
+    BreadthFirstSearch(search, search.vert_dict['a'])
