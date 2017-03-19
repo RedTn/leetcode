@@ -2,6 +2,7 @@ import graph
 from dijsktra import Dijsktra_path
 from dfs import DepthFirstSearch
 from bfs import BreadthFirstSearch
+from bestfs import BestFirstSearch
 
 if __name__ == '__main__':
 
@@ -74,4 +75,5 @@ if __name__ == '__main__':
     search.add_edge('e', 'g')
 
     #DepthFirstSearch(search, search.vert_dict['a'])
-    BreadthFirstSearch(search, search.vert_dict['a'])
+    #BreadthFirstSearch(search, search.vert_dict['a'])
+    BestFirstSearch(g, search.vert_dict['a'])
